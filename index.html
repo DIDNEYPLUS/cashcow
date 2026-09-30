@@ -65,10 +65,58 @@ nav ul a{text-decoration:none}nav ul a:hover{color:var(--tx)}
 
 /* problem */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.ba{display:grid;grid-template-columns:1fr 44px 1fr;align-items:center;gap:0}
-.ba .box{border:1px solid var(--line);border-radius:var(--r);padding:20px;background:var(--bg2);min-height:190px;display:flex;flex-direction:column;justify-content:space-between}
-.ba .box.after{border-color:rgba(255,75,58,.5);background:linear-gradient(160deg,#2a1414,#12141a)}
-.ba .arrow{text-align:center;color:var(--red);font-size:26px}
+.ba{
+  display:grid;
+  grid-template-columns:1fr 44px 1fr;
+  align-items:center;
+  gap:0;
+}
+
+.ba .box{
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  padding:20px;
+  background:var(--bg2);
+  min-height:190px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.ba .box.after{
+  border-color:rgba(255,75,58,.5);
+  background:linear-gradient(160deg,#2a1414,#12141a);
+  position:relative;
+  overflow:hidden;
+}
+
+.ba .box.after::after{
+  content:"▶";
+  position:absolute;
+  right:18px;
+  top:18px;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:var(--red);
+  color:#fff;
+  font-size:13px;
+  box-shadow:0 8px 24px rgba(255,75,58,.35);
+}
+
+.ba .box.after strong{
+  font-size:20px;
+  line-height:1.2;
+  max-width:14ch;
+}
+
+.ba .arrow{
+  text-align:center;
+  color:var(--red);
+  font-size:26px;
+}
 .box small{color:var(--mute);font-size:13px}
 .box strong{font-size:17px;line-height:1.25}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:34px}
